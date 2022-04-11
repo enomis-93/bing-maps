@@ -1,4 +1,3 @@
-import "./App.css";
 import BingMap from "./components/bingmap/BingMap";
 
 function App() {
