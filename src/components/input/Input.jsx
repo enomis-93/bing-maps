@@ -6,16 +6,16 @@ class Input extends React.Component {
 
     this._inputRef = React.createRef();
   }
-  state = {};
 
   render() {
     return (
-      <div className="d-flex flex-column">
+      <div className="d-flex flex-column ">
         <label htmlFor={this.props.forHtml}>{this.props.labelName}</label>
         <input
           name={this.props.name}
           ref={this._inputRef}
           type={this.props.type}
+          className="rounded"
         />
       </div>
     );

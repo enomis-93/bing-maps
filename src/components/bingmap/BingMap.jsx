@@ -6,16 +6,6 @@ export default class BingMap extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.pushPin = {
-    //   center: {
-    //     latitude: 0,
-    //     longitude: 0,
-    //   },
-    //   options: {
-    //     title: "Pin1 ",
-    //   },
-    // };
-
     /* An empty array where i'll push each pin object with its own latitude and longitude values picked from the form inputs */
     this.pushPins = [];
 
@@ -23,7 +13,6 @@ export default class BingMap extends React.Component {
   }
 
   handleSubmit = (e) => {
-    /* Prevent that the submit button send to another page */
     e.preventDefault();
     /* If inputs are fullfield set the new state
     and push latitude and longitude values as a new object in the 
@@ -50,19 +39,11 @@ export default class BingMap extends React.Component {
       e.target[1].value = "";
       e.target[2].value = "";
 
-      // this.pushPin.center.latitude = this.state.latitude;
-      // this.pushPin.center.longitude = this.state.longitude;
-      // console.log(
-      //   `latitude: ${e.target[0].value} longitude: ${e.target[1].value}`
-      // );
-      //console.log(e);
       console.log(this.pushPins);
     } else {
       return alert("Please fill all the inputs with a valid values");
     }
   };
-
-  handleChange = (e) => {};
 
   render() {
     return (
@@ -86,7 +67,7 @@ export default class BingMap extends React.Component {
           />
         </div>
         <div className="col-sm-3 col-md-3">
-          <Form onSubmit={this.handleSubmit} onChange={this.handleChange} />
+          <Form onSubmit={this.handleSubmit} />
         </div>
       </div>
     );
