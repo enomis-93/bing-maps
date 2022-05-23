@@ -16,6 +16,7 @@ class Input extends React.Component {
           ref={this._inputRef}
           type={this.props.type}
           className="rounded"
+          placeholder={this.props.placeholder}
         />
       </div>
     );

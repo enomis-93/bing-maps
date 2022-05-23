@@ -16,29 +16,40 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.props.onSubmit}>
-        <Input
-          name="latitude"
-          type="text"
-          forHtml="latitude"
-          labelName="Latitude"
-        />
+      <form className="d-flex p-2" onSubmit={this.props.onSubmit}>
+        <div className="mx-1 fw-bold text-black">
+          <Input
+            name="latitude"
+            type="text"
+            forHtml="latitude"
+            labelName="Latitude"
+            placeholder="Enter Latitude"
+          />
+        </div>
 
-        <Input
-          name="longitude"
-          type="text"
-          forHtml="longitude"
-          labelName="Longitude"
-        />
+        <div className="mx-1 fw-bold text-black">
+          <Input
+            name="longitude"
+            type="text"
+            forHtml="longitude"
+            labelName="Longitude"
+            placeholder="Enter Longitude"
+          />
+        </div>
 
-        <Input
-          name="pinName"
-          type="text"
-          forHtml="pinName"
-          labelName="Pin Name"
-        />
+        <div className="mx-1 fw-bold text-black">
+          <Input
+            name="pinName"
+            type="text"
+            forHtml="pinName"
+            labelName="Pin Name"
+            placeholder="Enter Pin Name"
+          />
+        </div>
 
-        <Button text="Insert Pin" styling="success" />
+        <div className="p-2">
+          <Button text="Insert Pin" styling="success" />
+        </div>
       </form>
     );
   }

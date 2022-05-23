@@ -1,6 +1,7 @@
 import React from "react";
 import BingMapsReact from "bingmaps-react";
 import Form from "../form/Form";
+import "./bingmap.css";
 
 export default class BingMap extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class BingMap extends React.Component {
     /* An empty array where i'll push each pin object with its own latitude and longitude values picked from the form inputs */
     this.pushPins = [];
 
-    this.state = { latitude: 0, longitude: 0 };
+    this.state = { latitude: 41.902782, longitude: 12.496366 };
   }
 
   handleSubmit = (e) => {
@@ -47,16 +48,19 @@ export default class BingMap extends React.Component {
 
   render() {
     return (
-      <div className="row justify-content-around">
-        <div className="col-sm-6 col-md-6">
+      <div>
+        <div className="form">
+          <Form onSubmit={this.handleSubmit} />
+        </div>
+        <div className="map">
           <BingMapsReact
             pushPins={this.pushPins}
             bingMapsKey="ArVWnezBVbwoBQHEHRshCfKMVGEAatsh8eAOd227PqIcUcNOkkOMFSA0zG87e6sr"
-            height="500px"
+            height="100vh"
             mapOptions={{
               navigationBarMode: "square",
             }}
-            width="50vw"
+            width="100vw"
             viewOptions={{
               center: {
                 latitude: this.state.latitude,
@@ -65,9 +69,6 @@ export default class BingMap extends React.Component {
               mapTypeId: "road",
             }}
           />
-        </div>
-        <div className="col-sm-3 col-md-3">
-          <Form onSubmit={this.handleSubmit} />
         </div>
       </div>
     );
